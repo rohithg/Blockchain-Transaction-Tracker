@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⛓️ Blockchain Tracker</h1>
+            <div class="connection-status" id="status">Connecting...</div>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Latest Block</h3>
+                <div class="block-number" id="blockNumber">-</div>
+                <div class="block-info">
+                    <span>Transactions: <strong id="txCount">-</strong></span>
+                    <span>Gas Used: <strong id="gasUsed">-</strong></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Network Stats</h3>
+                <div class="stat-grid">
+                    <div class="stat">
+                        <span class="stat-label">Gas Price</span>
+                        <span class="stat-value" id="gasPrice">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Difficulty</span>
+                        <span class="stat-value" id="difficulty">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card full-width">
+                <h3>Account Balance Checker</h3>
+                <div class="search-box">
+                    <input type="text" id="addressInput" placeholder="Enter Ethereum address (0x...)">
+                    <button onclick="checkBalance()">Check Balance</button>
+                </div>
+                <div id="balanceResult" class="result"></div>
+            </div>
+
+            <div class="card full-width">
+                <h3>Recent Transactions</h3>
+                <div class="transaction-list" id="transactionList">
+                    <p class="loading">Waiting for transactions...</p>
+                </div>
+            </div>
+
+            <div class="card full-width">
+                <h3>Transaction Volume (Last 10 Blocks)</h3>
+                <canvas id="txChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

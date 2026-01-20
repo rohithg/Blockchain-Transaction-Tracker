@@ -1,0 +1,10 @@
+{
+  "name": "blockchain-tracker",
+  "version": "1.0.0",
+  "description": "Real-time Ethereum blockchain transaction tracker with Web3.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": ["blockchain", "web3", "ethereum", "crypto"]
+}
